@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.CUsuarioModel;
 import com.example.demo.model.UsuarioModel;
+
 import com.example.demo.repository.UsuarioRepositorio;
 
 import tools.jackson.databind.ObjectMapper;
@@ -25,11 +26,12 @@ public class ProgramaControler {
 
     @PostMapping( value = "/validacion_usuario",consumes = {"multipart/form-data"})
     public List<UsuarioModel> validacion_usuario (@RequestParam String Cuerpo){
-
         ObjectMapper mapper = new ObjectMapper();
         CUsuarioModel usuario = mapper.readValue(Cuerpo, CUsuarioModel.class);
-
         return usuariorepositorio.validacion_usuario(usuario);
     }
+
+
+
 
 }
