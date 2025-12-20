@@ -33,20 +33,20 @@ public class FichaRepositorio {
                     (rs, rowNum) -> {
                         CabeceraFicha cabecera = new CabeceraFicha();
                         cabecera.setPf_definicion(rs.getString("pf_definicion"));
-                        cabecera.setPf_id(rs.getInt("pf_id"));
-                        cabecera.setPie_id(rs.getInt("pie_id"));
+                        cabecera.setPf_id(rs.getObject("pf_id",Integer.class));
+                        cabecera.setPie_id(rs.getObject("pie_id",Integer.class));
                         cabecera.setPf_fecha_ini(rs.getDate("pf_fecha_ini"));
                         cabecera.setPf_fecha_fin(rs.getDate("pf_fecha_fin"));
-                        cabecera.setPf_nummanipuladores(rs.getInt("pf_nummanipuladores"));
-                        cabecera.setPf_ubiseralimentacion(rs.getInt("pf_ubiseralimentacion"));
-                        cabecera.setPf_racionesrecibieron(rs.getInt("pf_racionesrecibieron"));
-                        cabecera.setPf_derracionesrecibieron(rs.getInt("pf_derracionesrecibieron"));
-                        cabecera.setPf_resultado(rs.getInt("pf_resultado"));
-                        cabecera.setPf_nusuarios(rs.getInt("pf_nusuarios"));
-                        cabecera.setPf_estado(rs.getInt("pf_estado"));
-                        cabecera.setPf_ultimoHito(rs.getInt("pf_ultimoHito"));
+                        cabecera.setPf_nummanipuladores(rs.getObject("pf_nummanipuladores",Integer.class));
+                        cabecera.setPf_ubiseralimentacion(rs.getString("pf_ubiseralimentacion"));
+                        cabecera.setPf_racionesrecibieron(rs.getObject("pf_racionesrecibieron",Integer.class));
+                        cabecera.setPf_derracionesrecibieron(rs.getString("pf_derracionesrecibieron"));
+                        cabecera.setPf_resultado(rs.getObject("pf_resultado",Integer.class));
+                        cabecera.setPf_nusuarios(rs.getObject("pf_nusuarios",Integer.class));
+                        cabecera.setPf_estado(rs.getObject("pf_estado",Integer.class));
+                        cabecera.setPf_ultimoHito(rs.getObject("pf_ultimoHito",Integer.class));
                         cabecera.setPfObservacionesGeneral(rs.getString("pf_observacionGeneral"));
-                        cabecera.setPr_id(rs.getInt("pr_id"));
+                        cabecera.setPr_id(rs.getObject("pr_id",Integer.class));
                         // agrega más campos según tu procedimiento
                         return cabecera;
                     }
@@ -60,20 +60,20 @@ public class FichaRepositorio {
                     new Object[]{codigoFicha,"DET"},
                     (rs, rowNum) -> {
                         DetalleFicha detalle = new DetalleFicha();
-                        detalle.setPp_id(rs.getInt("pp_id"));
-                        detalle.setPdf_cumplimiento(rs.getInt("pdf_cumplimiento"));
+                        detalle.setPp_id(rs.getObject("pp_id",Integer.class));
+                        detalle.setPdf_cumplimiento(rs.getObject("pdf_cumplimiento",Integer.class));
                         detalle.setPdf_observacion(rs.getString("pdf_observacion"));
                         detalle.setPdf_posicion(rs.getString("pdf_posicion"));
-                        detalle.setPdf_cantidad(rs.getInt("pdf_cantidad"));
-                        detalle.setPdf_estado(rs.getInt("pdf_estado"));
-                        detalle.setPdf_material(rs.getInt("pdf_material"));
-                        detalle.setPdf_material_esp(rs.getInt("pdf_material_esp"));
-                        detalle.setPdf_vigencia(rs.getInt("pdf_vigencia"));
+                        detalle.setPdf_cantidad(rs.getObject("pdf_cantidad",Integer.class));
+                        detalle.setPdf_estado(rs.getObject("pdf_estado",Integer.class));
+                        detalle.setPdf_material(rs.getObject("pdf_material",Integer.class));
+                        detalle.setPdf_material_esp(rs.getString("pdf_material_esp"));
+                        detalle.setPdf_vigencia(rs.getObject("pdf_vigencia",Integer.class));
                         detalle.setPdf_fecha_caducidad(rs.getString("pdf_fecha_caducidad"));
-                        detalle.setPdf_tipo_cocina(rs.getInt("pdf_tipo_cocina"));
+                        detalle.setPdf_tipo_cocina(rs.getObject("pdf_tipo_cocina",Integer.class));
                         detalle.setPdf_tipo_cocina_esp(rs.getString("pdf_tipo_cocina_esp"));
-                        detalle.setPdf_limpio(rs.getInt("pdf_limpio"));
-                        detalle.setPdf_desinfectado(rs.getInt("pdf_desinfectado"));
+                        detalle.setPdf_limpio(rs.getObject("pdf_limpio",Integer.class));
+                        detalle.setPdf_desinfectado(rs.getObject("pdf_desinfectado",Integer.class));
                         detalle.setPdf_otro_ambpreparacion(rs.getString("pdf_otro_ambpreparacion"));
                         detalle.setImagenes(rs.getString("imagenes"));
                         // agrega más campos según tu procedimiento

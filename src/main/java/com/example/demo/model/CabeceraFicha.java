@@ -9,9 +9,9 @@ public class CabeceraFicha {
         private Date pf_fecha_ini;
         private Date pf_fecha_fin;
         private Integer pf_nummanipuladores;
-        private Integer pf_ubiseralimentacion;
+        private String pf_ubiseralimentacion;
         private Integer pf_racionesrecibieron;
-        private Integer pf_derracionesrecibieron;
+        private String pf_derracionesrecibieron;
         private Integer pf_nusuarios;
         private Integer pf_resultado;
         private Integer pf_estado;
@@ -69,11 +69,11 @@ public class CabeceraFicha {
         this.pf_nummanipuladores = pf_nummanipuladores;
     }
 
-    public Integer getPf_ubiseralimentacion() {
+    public String getPf_ubiseralimentacion() {
         return this.pf_ubiseralimentacion;
     }
 
-    public void setPf_ubiseralimentacion(Integer pf_ubiseralimentacion) {
+    public void setPf_ubiseralimentacion(String pf_ubiseralimentacion) {
         this.pf_ubiseralimentacion = pf_ubiseralimentacion;
     }
 
@@ -85,11 +85,11 @@ public class CabeceraFicha {
         this.pf_racionesrecibieron = pf_racionesrecibieron;
     }
 
-    public Integer getPf_derracionesrecibieron() {
+    public String getPf_derracionesrecibieron() {
         return this.pf_derracionesrecibieron;
     }
 
-    public void setPf_derracionesrecibieron(Integer pf_derracionesrecibieron) {
+    public void setPf_derracionesrecibieron(String pf_derracionesrecibieron) {
         this.pf_derracionesrecibieron = pf_derracionesrecibieron;
     }
 
@@ -141,12 +141,14 @@ public class CabeceraFicha {
         this.pr_id = pr_id;
     }
 
+    
 
     public CabeceraFicha() {
     }
 
 
-    public CabeceraFicha(String pf_definicion, Integer pf_id, Integer pie_id, Date pf_fecha_ini, Date pf_fecha_fin, Integer pf_nummanipuladores, Integer pf_ubiseralimentacion, Integer pf_racionesrecibieron, Integer pf_derracionesrecibieron, Integer pf_nusuarios, Integer pf_resultado, Integer pf_estado, Integer pf_ultimoHito, String pfObservacionesGeneral, Integer pr_id) {
+
+    public CabeceraFicha(String pf_definicion, Integer pf_id, Integer pie_id, Date pf_fecha_ini, Date pf_fecha_fin, Integer pf_nummanipuladores, String pf_ubiseralimentacion, Integer pf_racionesrecibieron, String pf_derracionesrecibieron, Integer pf_nusuarios, Integer pf_resultado, Integer pf_estado, Integer pf_ultimoHito, String pfObservacionesGeneral, Integer pr_id) {
         this.pf_definicion = pf_definicion;
         this.pf_id = pf_id;
         this.pie_id = pie_id;
@@ -163,6 +165,7 @@ public class CabeceraFicha {
         this.pfObservacionesGeneral = pfObservacionesGeneral;
         this.pr_id = pr_id;
     }
+
 
         
 }

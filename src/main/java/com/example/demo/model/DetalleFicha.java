@@ -8,7 +8,7 @@ public class DetalleFicha {
     private Integer pdf_cantidad;
     private Integer pdf_estado;
     private Integer pdf_material;
-    private Integer pdf_material_esp;
+    private String pdf_material_esp;
     private Integer pdf_vigencia;
     private String pdf_fecha_caducidad;
     private Integer pdf_tipo_cocina;
@@ -17,6 +17,7 @@ public class DetalleFicha {
     private Integer pdf_desinfectado;
     private String pdf_otro_ambpreparacion;
     private String imagenes;
+
 
 
     public Integer getPp_id() {
@@ -75,11 +76,11 @@ public class DetalleFicha {
         this.pdf_material = pdf_material;
     }
 
-    public Integer getPdf_material_esp() {
+    public String getPdf_material_esp() {
         return this.pdf_material_esp;
     }
 
-    public void setPdf_material_esp(Integer pdf_material_esp) {
+    public void setPdf_material_esp(String pdf_material_esp) {
         this.pdf_material_esp = pdf_material_esp;
     }
 
@@ -152,7 +153,8 @@ public class DetalleFicha {
     }
 
 
-    public DetalleFicha(Integer pp_id, Integer pdf_cumplimiento, String pdf_observacion, String pdf_posicion, Integer pdf_cantidad, Integer pdf_estado, Integer pdf_material, Integer pdf_material_esp, Integer pdf_vigencia, String pdf_fecha_caducidad, Integer pdf_tipo_cocina, String pdf_tipo_cocina_esp, Integer pdf_limpio, Integer pdf_desinfectado, String pdf_otro_ambpreparacion, String imagenes) {
+
+    public DetalleFicha(Integer pp_id, Integer pdf_cumplimiento, String pdf_observacion, String pdf_posicion, Integer pdf_cantidad, Integer pdf_estado, Integer pdf_material, String pdf_material_esp, Integer pdf_vigencia, String pdf_fecha_caducidad, Integer pdf_tipo_cocina, String pdf_tipo_cocina_esp, Integer pdf_limpio, Integer pdf_desinfectado, String pdf_otro_ambpreparacion, String imagenes) {
         this.pp_id = pp_id;
         this.pdf_cumplimiento = pdf_cumplimiento;
         this.pdf_observacion = pdf_observacion;
