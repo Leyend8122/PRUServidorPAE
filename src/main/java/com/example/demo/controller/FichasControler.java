@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.example.demo.model.CabeceraFicha;
 import com.example.demo.model.DetalleFicha;
 import com.example.demo.model.GArchivos;
+import com.example.demo.model.MlistaFicha;
 import com.example.demo.repository.FichaRepositorio;
 
 import tools.jackson.core.type.TypeReference;
@@ -45,6 +46,14 @@ public class FichasControler {
     public List<CabeceraFicha> Consulta_Cabecera (@RequestParam int codigoFicha){
         return fichasRepositorio.Consulta_Cabecera(codigoFicha);
     }
+
+    /*@PostMapping( value = "/listaficha",consumes = {"multipart/form-data"})
+    public List<MlistaFicha> lista_ficha (@RequestParam int codigoFicha){
+        return fichasRepositorio.lista_ficha(codigoFicha);
+    }*/
+    
+
+
 
     @PostMapping( value = "/ConsultaDetalle",consumes = {"multipart/form-data"})
     public List<DetalleFicha> Consulta_Detalle (@RequestParam int codigoFicha){

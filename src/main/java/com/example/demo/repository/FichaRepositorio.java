@@ -7,9 +7,11 @@ import org.springframework.stereotype.Repository;
 
 
 import com.example.demo.model.CabeceraFicha;
+import com.example.demo.model.ClistaFicha;
 import com.example.demo.model.DetalleFicha;
 import com.example.demo.model.GCabeceraFicha;
 import com.example.demo.model.GDetalleFicha;
+import com.example.demo.model.MlistaFicha;
 
 @Repository
 public class FichaRepositorio {
@@ -88,6 +90,27 @@ public class FichaRepositorio {
 
     }
 
+    public List<MlistaFicha> lista_ficha(ClistaFicha clistaFicha){
+            return jdbcTemplate.query(
+                    "CALL Consulta_FichaGen(?, ?, ?, ?)",
+                    new Object[]{clistaFicha.getAno_(),clistaFicha.getMes_(),clistaFicha.getRegistra_(),clistaFicha.getFicha_()},
+                    (rs, rowNum) -> {
+                        MlistaFicha detalle = new MlistaFicha();
+                        detalle.setCodigoFicha(rs.getObject("pf_id",Integer.class));
+                        detalle.setNombreFicha(rs.getString("pf_definicion"));
+                        detalle.setNombreResponsable(rs.getString("nombreResponsable"));
+                        detalle.setNombreInstitucion(rs.getString("nombreInstitucion"));
+                        detalle.setDepartamento(rs.getString("UB_NOMBDEP"));
+                        detalle.setProvincia(rs.getString("UB_NOMBPROV"));
+                        detalle.setDistrito(rs.getString("UB_NOMBDIST"));
+                        detalle.setResultado(rs.getObject("pf_resultado",Integer.class));
+                        detalle.setEstado(rs.getObject("pf_estado",Integer.class));
+                        detalle.setFechaRegistro(rs.getString("pf_fecregistra"));
+                        return detalle;
+                    }
+                );
+
+    }
 
 
     public void Guardar_Cabecera(List<CabeceraFicha> CabeceraFicha){
@@ -127,6 +150,8 @@ public class FichaRepositorio {
                      );
                 });
      };
+
+
     
 
 
