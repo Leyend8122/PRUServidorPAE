@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.model.CabeceraFicha;
+import com.example.demo.model.ClistaFicha;
 import com.example.demo.model.DetalleFicha;
 import com.example.demo.model.GArchivos;
 import com.example.demo.model.MlistaFicha;
@@ -47,12 +48,12 @@ public class FichasControler {
         return fichasRepositorio.Consulta_Cabecera(codigoFicha);
     }
 
-    /*@PostMapping( value = "/listaficha",consumes = {"multipart/form-data"})
-    public List<MlistaFicha> lista_ficha (@RequestParam int codigoFicha){
-        return fichasRepositorio.lista_ficha(codigoFicha);
-    }*/
-    
-
+    @PostMapping( value = "/listaficha",consumes = {"multipart/form-data"})
+    public List<MlistaFicha> lista_ficha (@RequestParam String Cuerpo){
+        ObjectMapper mapper = new ObjectMapper();
+         ClistaFicha usuario = mapper.readValue(Cuerpo, ClistaFicha.class);
+        return fichasRepositorio.lista_ficha(usuario);
+    }
 
 
     @PostMapping( value = "/ConsultaDetalle",consumes = {"multipart/form-data"})
