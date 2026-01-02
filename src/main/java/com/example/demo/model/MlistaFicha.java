@@ -11,6 +11,8 @@ public class MlistaFicha {
     private Integer resultado;
     private Integer estado;
     private String fechaRegistro;
+    private Integer codigoProfesional;
+    private Integer codigoInstitucional;
 
 
 
@@ -94,9 +96,28 @@ public class MlistaFicha {
         this.fechaRegistro = fechaRegistro;
     }
 
+    public Integer getCodigoProfesional() {
+        return this.codigoProfesional;
+    }
+
+    public void setCodigoProfesional(Integer codigoProfesional) {
+        this.codigoProfesional = codigoProfesional;
+    }
+
+    public Integer getCodigoInstitucional() {
+        return this.codigoInstitucional;
+    }
+
+    public void setCodigoInstitucional(Integer codigoInstitucional) {
+        this.codigoInstitucional = codigoInstitucional;
+    }
 
 
-    public MlistaFicha(Integer codigoFicha, String nombreFicha, String nombreResponsable, String nombreInstitucion, String departamento, String provincia, String distrito, Integer resultado, Integer estado, String fechaRegistro) {
+    public MlistaFicha() {
+    }
+   
+
+    public MlistaFicha(Integer codigoFicha, String nombreFicha, String nombreResponsable, String nombreInstitucion, String departamento, String provincia, String distrito, Integer resultado, Integer estado, String fechaRegistro, Integer codigoProfesional, Integer codigoInstitucional) {
         this.codigoFicha = codigoFicha;
         this.nombreFicha = nombreFicha;
         this.nombreResponsable = nombreResponsable;
@@ -107,11 +128,8 @@ public class MlistaFicha {
         this.resultado = resultado;
         this.estado = estado;
         this.fechaRegistro = fechaRegistro;
-    }
-
-   
-
-    public MlistaFicha() {
+        this.codigoProfesional = codigoProfesional;
+        this.codigoInstitucional = codigoInstitucional;
     }
 
 

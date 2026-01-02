@@ -106,6 +106,8 @@ public class FichaRepositorio {
                         detalle.setResultado(rs.getObject("pf_resultado",Integer.class));
                         detalle.setEstado(rs.getObject("pf_estado",Integer.class));
                         detalle.setFechaRegistro(rs.getString("pf_fecregistra"));
+                        detalle.setCodigoProfesional(rs.getObject("codigoProfesional",Integer.class));
+                        detalle.setCodigoInstitucional(rs.getObject("codigoInstitucion",Integer.class));
                         return detalle;
                     }
                 );
