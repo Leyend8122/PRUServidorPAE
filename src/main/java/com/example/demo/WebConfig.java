@@ -12,7 +12,7 @@ public class WebConfig implements WebMvcConfigurer{
                 // https://sage-crisp-065bf2.netlify.app
                 // http://localhost:8081
     
-                .allowedOrigins("http://localhost:8081") // origen permitido
+                .allowedOrigins("https://sage-crisp-065bf2.netlify.app") // origen permitido
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
