@@ -20,6 +20,7 @@ public class CabeceraFicha {
         private Integer pr_id;
         private String pf_defInstituciones;
         private String pf_defResponsable;
+        private String pf_resumen;
 
 
 
@@ -159,8 +160,16 @@ public class CabeceraFicha {
         this.pf_defResponsable = pf_defResponsable;
     }
 
+    public String getPf_resumen() {
+        return this.pf_resumen;
+    }
 
-    public CabeceraFicha(String pf_definicion, Integer pf_id, Integer pie_id, Date pf_fecha_ini, Date pf_fecha_fin, Integer pf_nummanipuladores, String pf_ubiseralimentacion, Integer pf_racionesrecibieron, String pf_derracionesrecibieron, Integer pf_nusuarios, Integer pf_resultado, Integer pf_estado, Integer pf_ultimoHito, String pfObservacionesGeneral, Integer pr_id, String pf_defInstituciones, String pf_defResponsable) {
+    public void setPf_resumen(String pf_resumen) {
+        this.pf_resumen = pf_resumen;
+    }
+
+
+    public CabeceraFicha(String pf_definicion, Integer pf_id, Integer pie_id, Date pf_fecha_ini, Date pf_fecha_fin, Integer pf_nummanipuladores, String pf_ubiseralimentacion, Integer pf_racionesrecibieron, String pf_derracionesrecibieron, Integer pf_nusuarios, Integer pf_resultado, Integer pf_estado, Integer pf_ultimoHito, String pfObservacionesGeneral, Integer pr_id, String pf_defInstituciones, String pf_defResponsable, String pf_resumen) {
         this.pf_definicion = pf_definicion;
         this.pf_id = pf_id;
         this.pie_id = pie_id;
@@ -178,11 +187,14 @@ public class CabeceraFicha {
         this.pr_id = pr_id;
         this.pf_defInstituciones = pf_defInstituciones;
         this.pf_defResponsable = pf_defResponsable;
+        this.pf_resumen = pf_resumen;
     }
+
 
     public CabeceraFicha() {
-        
     }
 
+
+    
         
 }

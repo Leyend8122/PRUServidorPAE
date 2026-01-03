@@ -30,6 +30,18 @@ public class FichaRepositorio {
         );
     }
 
+
+    public byte[] obtenerImagenPorId(int id) {
+        return jdbcTemplate.queryForObject(
+            "SELECT pa_contenido FROM pro_archivos WHERE pdf_id = ?",
+            new Object[]{id},
+            (rs, rowNum) -> rs.getBytes("pa_contenido")
+        );
+    }
+
+
+
+
     public List<CabeceraFicha> Consulta_Cabecera(Integer codigoFicha){
             return jdbcTemplate.query(
                     "CALL consulta_FichaEsp(?, ?)",
@@ -53,6 +65,7 @@ public class FichaRepositorio {
                         cabecera.setPr_id(rs.getObject("pr_id",Integer.class));
                         cabecera.setPf_defInstituciones(rs.getString("pf_defInstituciones"));
                         cabecera.setPf_defResponsable(rs.getString("pf_defResponsable"));
+                        cabecera.setPf_resumen(rs.getString("pf_resumen"));
                         // agrega más campos según tu procedimiento
                         return cabecera;
                     }
@@ -118,7 +131,7 @@ public class FichaRepositorio {
     public void Guardar_Cabecera(List<CabeceraFicha> CabeceraFicha){
              CabeceraFicha.forEach(ficha ->{
                 jdbcTemplate.update(
-                    "CALL GuardarCabecera(?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "CALL GuardarCabecera(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                         ficha.getPie_id(), ficha.getPf_nummanipuladores(),
                         ficha.getPf_ubiseralimentacion(),ficha.getPf_racionesrecibieron(),
                         ficha.getPf_derracionesrecibieron(),
@@ -126,7 +139,8 @@ public class FichaRepositorio {
                         ficha.getPf_estado(),ficha.getPf_ultimoHito(),
                         ficha.getPfObservacionesGeneral(),
                         ficha.getPr_id(),ficha.getPf_id(),ficha.getPf_defInstituciones(),
-                        ficha.getPf_defResponsable()
+                        ficha.getPf_defResponsable(),
+                        ficha.getPf_resumen()
                 );
              });
     }

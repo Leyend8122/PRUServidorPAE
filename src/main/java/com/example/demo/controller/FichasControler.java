@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +25,8 @@ import com.example.demo.repository.FichaRepositorio;
 
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 
 
 @RestController
@@ -99,6 +103,18 @@ public class FichasControler {
     }
 
 
+    
+    @GetMapping("/mostrarImagen/{id}") 
+    public ResponseEntity<byte[]> mostrarImagen(@PathVariable int id) {
+         byte[] imagen = fichasRepositorio.obtenerImagenPorId(id);
+         return ResponseEntity.ok()
+                .contentType(MediaType.IMAGE_JPEG)
+                .body(imagen); // o IMAGE_PNG según el formato .body(imagen); }
+    }
+
+
+
+    
 
 
     
